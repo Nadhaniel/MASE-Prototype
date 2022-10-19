@@ -134,7 +134,8 @@ GameObject:
   - component: {fileID: 301550125}
   - component: {fileID: 301550124}
   - component: {fileID: 301550123}
-  m_Layer: 0
+  - component: {fileID: 301550126}
+  m_Layer: 6
   m_Name: apple
   m_TagString: apple
   m_Icon: {fileID: 0}
@@ -222,6 +223,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &301550126
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301550122}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &334903276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1175,7 @@ GameObject:
   - component: {fileID: 1387926439}
   - component: {fileID: 1387926441}
   - component: {fileID: 1387926440}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3308,6 +3330,7 @@ GameObject:
   - component: {fileID: 1483870361}
   - component: {fileID: 1483870358}
   - component: {fileID: 1483870363}
+  - component: {fileID: 1483870359}
   m_Layer: 6
   m_Name: Creature
   m_TagString: Untagged
@@ -3341,6 +3364,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1483870359
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483870357}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!212 &1483870361
 SpriteRenderer:
   m_ObjectHideFlags: 0

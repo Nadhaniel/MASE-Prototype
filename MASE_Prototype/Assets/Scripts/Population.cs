@@ -27,6 +27,28 @@ public class Population : MonoBehaviour
         GUI.EndGroup();
     }
 
+    private void Start()
+    {
+        for (int i = 0; i < popSize; i++)
+        {
+            GameObject b = Instantiate(creature, this.transform.position, this.transform.rotation);
+            b.transform.Rotate(0, Mathf.Round(Random.Range(-90, 91) / 90) * 90, 0);
+            population.Add(b);
+        }
+        Time.timeScale = timeScale;
+    }
+
+    GameObject Breed(GameObject parent1, GameObject parent2)
+    {
+        return null;
+    }
+
+    void BreedNewPopulation()
+    {
+        
+    }
+
+
     private void FixedUpdate()
     {
         

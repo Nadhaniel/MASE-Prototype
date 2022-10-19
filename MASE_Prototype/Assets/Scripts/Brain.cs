@@ -17,10 +17,11 @@ public class Brain : MonoBehaviour
         dna = new DNA();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("apple"))
-        {
+        {    
             FoodFound++;
             other.gameObject.SetActive(false);
         }
@@ -31,12 +32,14 @@ public class Brain : MonoBehaviour
         seeWall = false;
         canMove = true;
         Debug.DrawRay(Agent.transform.position, Agent.transform.right * 1f, Color.black);
-        RaycastHit2D hit = Physics2D.Raycast(Agent.transform.position, Agent.transform.right, 1f);
-        Debug.Log(hit.collider.gameObject.tag);
-        if (hit.collider.gameObject.CompareTag("wall"))
+        RaycastHit2D hit = Physics2D.Raycast(Agent.transform.position, Agent.transform.right, 1f, ~ignore);
+        if (hit.collider != null)
         {
-            seeWall = true;
-            canMove = false;
+            if (hit.collider.CompareTag("wall"))
+            {
+                seeWall = true;
+                canMove = false;
+            }
         }
     }
     private void FixedUpdate()
