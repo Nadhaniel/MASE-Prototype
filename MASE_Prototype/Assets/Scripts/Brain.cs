@@ -7,7 +7,7 @@ public class Brain : MonoBehaviour
     public DNA dna;
     public GameObject Agent;
     bool seeFood;
-    bool seeWall;
+    (bool left, bool forward, bool right) seeWall;
     public float FoodFound = 0;
     LayerMask ignore = 6;
     bool canMove = false;
@@ -29,18 +29,38 @@ public class Brain : MonoBehaviour
 
     private void Update()
     {
-        seeWall = false;
+        seeWall = (false, false, false);
+        bool left = false;
+        bool front = false;
+        bool right = false;
         canMove = true;
         Debug.DrawRay(Agent.transform.position, Agent.transform.right * 1f, Color.black);
-        RaycastHit2D hit = Physics2D.Raycast(Agent.transform.position, Agent.transform.right, 1f, ~ignore);
+        RaycastHit2D hitr = Physics2D.Raycast(Agent.transform.position, Agent.transform.right, 1f, ~ignore);
+        RaycastHit2D hitl = Physics2D.Raycast(Agent.transform.position, -Agent.transform.right, 1f, ~ignore);
+        RaycastHit2D hit = Physics2D.Raycast(Agent.transform.position, Agent.transform.up, 1f, ~ignore);
+        if (hitr.collider != null)
+        {
+            if (hitr.collider.CompareTag("wall"))
+            {
+                right = true;
+            }
+        }
+        if (hitl.collider != null)
+        {
+            if (hitl.collider.CompareTag("wall"))
+            {
+                left = true;
+            }
+        }
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("wall"))
             {
-                seeWall = true;
+                front = true;
                 canMove = false;
             }
         }
+        seeWall = (left, front, right);
     }
     private void FixedUpdate()
     {

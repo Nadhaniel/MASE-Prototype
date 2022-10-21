@@ -45,7 +45,7 @@ public class Population : MonoBehaviour
         GameObject offspring = Instantiate(creature, this.transform.position, this.transform.rotation);
         offspring.transform.Rotate(0, Mathf.Round(Random.Range(-90, 91) / 90) * 90, 0);
         Brain b = offspring.GetComponent<Brain>();
-        if (Random.Range(0, 100) == 1) //mutate
+        if (Random.Range(0, 20) == 1) //mutate
         {
             b.Init();
         }

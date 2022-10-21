@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpawnFood : MonoBehaviour
 {
     public GameObject Food;
+    public int foodlimit = 50;
+    public int foodcount = 0;
     public float respawnTime = 1.0f;
     private Vector2 screenBounds;
 
@@ -15,7 +17,7 @@ public class SpawnFood : MonoBehaviour
     }
     private void spawnFood() {
         GameObject obj = Instantiate(Food) as GameObject;
-        obj.transform.position = new Vector2(Random.Range(-screenBounds.x, screenBounds.x), Random.Range(-screenBounds.y, screenBounds.y));
+        obj.transform.position = new Vector2(Random.Range(-screenBounds.x, screenBounds.x), Random.Range(-screenBounds.y, screenBounds.y));  
     }
 
     IEnumerator FoodWave() {

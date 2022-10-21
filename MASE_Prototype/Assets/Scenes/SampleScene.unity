@@ -155,9 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creature: {fileID: 917451171915639118, guid: d4d115d7cdb6dee42b435e97c6560bc1, type: 3}
   startingPos: []
-  popSize: 50
+  popSize: 20
   trialTime: 10
-  timeScale: 2
+  timeScale: 20
 --- !u!4 &334903278
 Transform:
   m_ObjectHideFlags: 0
@@ -185,7 +185,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Food: {fileID: 7137933452142203558, guid: 2468c2188b3d96240b2d70f7fa27b045, type: 3}
-  respawnTime: 0.5
+  foodlimit: 50
+  foodcount: 0
+  respawnTime: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
