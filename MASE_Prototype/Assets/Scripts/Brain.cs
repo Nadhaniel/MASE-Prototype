@@ -12,7 +12,7 @@ public class Brain : MonoBehaviour
     LayerMask ignore = 6;
     bool canMove = false;
 
-    private void Start()
+    public void Init()
     {
         dna = new DNA();
     }
@@ -23,7 +23,7 @@ public class Brain : MonoBehaviour
         if (other.gameObject.CompareTag("apple"))
         {    
             FoodFound++;
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
     }
 
